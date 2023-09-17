@@ -1,7 +1,8 @@
 from peewee import Model, SqliteDatabase, CharField, PrimaryKeyField, ForeignKeyField, Cas
 
 
-db = SqliteDatabase()
+db = SqliteDatabase('word_book.db')
+
 class WordBook(Model):
     _id = PrimaryKeyField()
     full_word = CharField()
@@ -17,3 +18,8 @@ class SimilarWord(Model):
 
     class Meta:
         database = db
+
+
+if not WordBook.table_exists():
+    db.connect()
+    db.create_tables([WordBook, SimilarWord])
