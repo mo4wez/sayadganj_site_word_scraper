@@ -1,0 +1,1 @@
+from peewee import Model, CharField, PrimaryKeyField
