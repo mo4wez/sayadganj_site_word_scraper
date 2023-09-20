@@ -72,8 +72,3 @@ class GetWord:
             self.driver.get(self.url)
             print(f'{item} item saved.')
 
-
-
-if __name__ == '__main__':
-    gw = GetWord()
-    gw.run()
